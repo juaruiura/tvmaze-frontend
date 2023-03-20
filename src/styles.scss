@@ -1,3 +1,15 @@
-.show-list-container {
-  color: blue;
+.show-list {
+  display: flex;
+  flex-wrap: wrap;
+  .show {
+    display: flex;
+    flex-direction: column;
+    &__image {
+      min-width: 300px;
+    }
+  }
+}
+
+body {
+  margin: 0;
 }
