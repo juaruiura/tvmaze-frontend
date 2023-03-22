@@ -1,9 +1,9 @@
 import React from "react";
 import { allShows, searchShows } from "../../api/api";
 import { ShowEntity } from "../../models/model";
-import { ShowList } from "./show-list";
-import { ShowPaginator } from "./show-paginator";
-import { ShowSearch } from "./show-search";
+import { ShowList } from "./components/show-list";
+import { ShowPaginator } from "./components/show-paginator";
+import { ShowSearch } from "./components/show-search";
 
 interface Props { }
 

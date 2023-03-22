@@ -1,6 +1,6 @@
 import React from "react";
-import { allShows, searchShows } from "../../api/api";
-import { SearchEntity, ShowEntity } from "../../models/model";
+import { allShows, searchShows } from "../../../api/api";
+import { SearchEntity, ShowEntity } from "../../../models/model";
 
 interface Props {
     searchHandler: (showName: string) => void,

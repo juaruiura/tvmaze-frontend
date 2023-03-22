@@ -1,11 +1,11 @@
 import React from "react";
-import { ShowEntity } from "../../models/model";
+import { ShowEntity } from "../../../models/model";
 
 interface Props {
     show: ShowEntity;
 }
 
-export const ShowListRow: React.FC<Props> = (props) => {
+export const ShowCard: React.FC<Props> = (props) => {
     const { show } = props;
 
     return (

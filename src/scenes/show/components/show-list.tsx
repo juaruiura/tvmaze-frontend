@@ -1,6 +1,6 @@
 import React from "react";
-import { ShowEntity } from "../../models/model";
-import { ShowListRow } from "./show-list-row";
+import { ShowEntity } from "../../../models/model";
+import { ShowCard } from "./show-card";
 
 interface Props {
     shows: ShowEntity[],
@@ -12,7 +12,7 @@ export const ShowList: React.FC<Props> = (props) => {
     return (
         <div className="show-list">
             {shows.map((show) => (
-                <ShowListRow key={show.id} show={show} />
+                <ShowCard key={show.id} show={show} />
             ))}
         </div>
     );
