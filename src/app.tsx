@@ -1,8 +1,8 @@
 import React from 'react';
-import { ShowList } from './show-list';
+import { ShowPage } from './scenes/show/show-page';
 
 export const App = () => {
     return <>
-        <ShowList />
+        <ShowPage />
     </>;
 };

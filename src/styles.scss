@@ -1,15 +1,46 @@
 .show-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
   .show {
     display: flex;
     flex-direction: column;
-    &__image {
-      min-width: 300px;
+    border: 10px groove darkred;
+    width: 250px;
+    &__info {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding: 10px;
+      row-gap: 5px;
+      &__name {
+        font-size: 26px;
+        font-weight: 600;
+        color: red;
+      }
     }
+  }
+}
+
+.show-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__textfield {
+    width: 33%;
+    margin: 30px 10px;
+    padding: 6px;
+    font-size: 18px;
+  }
+  &__button {
+    height: fit-content;
+    padding: 9px;
   }
 }
 
 body {
   margin: 0;
+  background-color: black;
+  color: white;
 }
