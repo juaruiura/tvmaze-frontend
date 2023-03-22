@@ -6,7 +6,14 @@ export interface ShowEntity {
     rating: { average: string },
     image: { medium: string, original: string },
 }
-export interface SearchEntity {
+export interface ShowsSearchEntity {
     score: number,
     show: ShowEntity,
+}
+export interface SeasonEntity {
+    id: string,
+    number: number,
+    episodeOrder: number,
+    premiereDate: string,
+    image: { medium: string, original: string },
 }

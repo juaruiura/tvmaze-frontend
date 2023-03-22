@@ -1,5 +1,5 @@
 import React from "react";
-import { allShows, searchShows } from "../../api/api";
+import { getAllShows, getShowsByName } from "../../api/api";
 import { ShowEntity } from "../../models/model";
 import { ShowList } from "./components/show-list";
 import { ShowPaginator } from "./components/show-paginator";
@@ -15,7 +15,7 @@ export const ShowPage: React.FC<Props> = (props) => {
     const [page, setPage] = React.useState<number>(0);
 
     React.useEffect(() => {
-        allShows(page)
+        getAllShows(page)
             .then((json: ShowEntity[]) => setShows(json))
             .catch((e) => console.error(e));
     }, [page]);
@@ -27,10 +27,10 @@ export const ShowPage: React.FC<Props> = (props) => {
 
     const searchHandler = (showName: string) => {
         if (showName) {
-            searchShows(showName).then(json => setShows(json.map(e => e.show)));
+            getShowsByName(showName).then(json => setShows(json.map(e => e.show)));
             setIsSearch(true);
         } else {
-            allShows(page).then(setShows);
+            getAllShows(page).then(setShows);
             setIsSearch(false);
         }
     }

@@ -10,7 +10,7 @@ export const ShowList: React.FC<Props> = (props) => {
     const { shows } = props;
 
     return (
-        <div className="show-list">
+        <div className="shows-list">
             {shows.map((show) => (
                 <ShowCard key={show.id} show={show} />
             ))}

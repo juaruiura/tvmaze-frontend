@@ -1,19 +1,27 @@
-.show-list {
+.shows-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+
   .show {
     display: flex;
     flex-direction: column;
     border: 10px groove darkred;
     width: 250px;
+    background-color: #151515;
+
+    &:hover {
+      cursor: pointer;
+    }
+
     &__info {
       display: flex;
       align-items: center;
       flex-direction: column;
       padding: 10px;
       row-gap: 5px;
+
       &__name {
         font-size: 26px;
         font-weight: 600;
@@ -27,12 +35,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   &__textfield {
     width: 33%;
     margin: 30px 10px;
     padding: 6px;
     font-size: 18px;
   }
+
   &__button {
     height: fit-content;
     padding: 8px;
@@ -48,13 +58,67 @@
   justify-content: center;
   column-gap: 25px;
   margin: 10px;
-  button{
+
+  button {
     background-color: red;
     border: 0;
     font-size: 16px;
     color: white;
     padding: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
+}
+
+.seasons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px;
+
+  .season {
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    border: 10px groove darkred;
+    background-color: #151515;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &__image {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 26px;
+      padding: 10px;
+      row-gap: 5px;
+
+      &__number {
+        font-size: 36px;
+        font-weight: 600;
+        color: red;
+      }
+    }
+  }
+}
+
+.back-button {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background-color: red;
+  font-size: 16px;
+  padding: 10px;
+  margin: 10px;
 }
 
 body {
