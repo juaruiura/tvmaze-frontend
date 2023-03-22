@@ -14,6 +14,7 @@ module.exports = {
   stats: "errors-only",
   output: {
     filename: "[name].[chunkhash].js",
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -46,6 +47,9 @@ module.exports = {
         ],
       },
     ],
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   plugins: [
     //Generate index.html in /dist => https://github.com/ampedandwired/html-webpack-plugin
