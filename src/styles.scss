@@ -35,7 +35,25 @@
   }
   &__button {
     height: fit-content;
-    padding: 9px;
+    padding: 8px;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    border: 2px solid red;
+  }
+}
+
+.show-paginator {
+  display: flex;
+  justify-content: center;
+  column-gap: 25px;
+  margin: 10px;
+  button{
+    background-color: red;
+    border: 0;
+    font-size: 16px;
+    color: white;
+    padding: 10px;
   }
 }
 

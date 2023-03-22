@@ -1,7 +1,7 @@
 import { SearchEntity, ShowEntity } from "../models/model";
 
-export const allShows = async (): Promise<ShowEntity[]> => {
-    return fetch("https://api.tvmaze.com/shows")
+export const allShows = async (page: number): Promise<ShowEntity[]> => {
+    return fetch(`https://api.tvmaze.com/shows?page=${page}`)
         .then((response) => {
             if (response.ok) {
                 return response.json();

@@ -3,7 +3,7 @@ import { allShows, searchShows } from "../../api/api";
 import { SearchEntity, ShowEntity } from "../../models/model";
 
 interface Props {
-    searchHandler: (showName: string) => void;
+    searchHandler: (showName: string) => void,
 }
 
 export const ShowSearch: React.FC<Props> = (props) => {
