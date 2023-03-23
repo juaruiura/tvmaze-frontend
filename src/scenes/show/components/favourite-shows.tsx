@@ -13,7 +13,9 @@ export const FavouriteShowList: React.FC<Props> = (props) => {
     return (
         <div className="favourite-shows-list">
             <span className="favourite-shows-list__label">Your Favourite Shows:</span>
-            <p className="favourite-shows-list__shows">{favouriteShowsData.favouriteShows.map((show) => show.name).join(", ")}</p>
+            <p className="favourite-shows-list__shows">
+                {favouriteShowsData.favouriteShows.length > 0 ? favouriteShowsData.favouriteShows.map((show) => show.name).join(", ") : "You have no favourite Shows"}
+            </p>
         </div>
     );
 };
