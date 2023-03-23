@@ -9,12 +9,20 @@ $breakpoint-tablet: 767px;
   .show {
     display: flex;
     flex-direction: column;
-    border: 10px groove darkred;
     width: 250px;
     background-color: #151515;
+    border: 10px groove darkred;
+    
+    &.favourited {
+      border: 10px groove darkgoldenrod;
+    }
 
     &:hover {
       cursor: pointer;
+    }
+
+    &__image {
+      width: 100%;
     }
 
     &__info {
@@ -28,6 +36,18 @@ $breakpoint-tablet: 767px;
         font-size: 26px;
         font-weight: 600;
         color: red;
+      }
+    }
+
+    &__fav-button {
+      padding: 5px 0;
+      font-size: 16px;
+      &.favourited {
+        background-color: darkgoldenrod;
+        color: white;
+        &:hover {
+          background-color: darkred;
+        }
       }
     }
   }
@@ -74,7 +94,8 @@ $breakpoint-tablet: 767px;
   }
 }
 
-.seasons-list, .episodes-list {
+.seasons-list,
+.episodes-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -85,17 +106,19 @@ $breakpoint-tablet: 767px;
     flex-direction: row;
     border: 10px groove darkred;
     background-color: #151515;
+
     @media (max-width: $breakpoint-tablet) {
       flex-direction: column;
       height: auto;
     }
-    
+
     &:hover {
       cursor: pointer;
     }
-    
+
     &__image {
       height: 250px;
+
       @media (max-width: $breakpoint-tablet) {
         height: auto;
       }
@@ -122,6 +145,7 @@ $breakpoint-tablet: 767px;
     flex-direction: row;
     border: 10px groove darkred;
     background-color: #151515;
+
     @media (max-width: $breakpoint-tablet) {
       flex-direction: column;
       height: auto;
@@ -129,6 +153,7 @@ $breakpoint-tablet: 767px;
 
     &__image {
       height: 250px;
+
       @media (max-width: $breakpoint-tablet) {
         height: auto;
         width: unset;
@@ -149,6 +174,22 @@ $breakpoint-tablet: 767px;
         color: red;
       }
     }
+  }
+}
+
+.favourite-shows-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+
+  &__label {
+    font-size: 36px;
+    color: red;
+  }
+  
+  &__shows {
+    font-size: 22px;
   }
 }
 

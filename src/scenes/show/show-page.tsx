@@ -1,7 +1,9 @@
 import React from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { getAllShows, getShowsByName } from "../../api/api";
+import { FavouriteShowsContext } from "../../providers/favourite-shows-context";
 import { ShowEntity } from "../../models/model";
+import { FavouriteShowList } from "./components/favourite-shows";
 import { ShowList } from "./components/show-list";
 import { ShowPaginator } from "./components/show-paginator";
 import { ShowSearch } from "./components/show-search";
@@ -45,6 +47,7 @@ export const ShowPage: React.FC<Props> = (props) => {
     }
 
     return <>
+        <FavouriteShowList />
         <ShowSearch searchHandler={searchHandler} />
         {!isSearch && <ShowPaginator pageHandler={pageHandler} page={page} />}
         <ShowList shows={shows} />
