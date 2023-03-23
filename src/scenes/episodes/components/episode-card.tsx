@@ -13,7 +13,7 @@ export const EpisodeCard: React.FC<Props> = (props) => {
             <img className="episode__image" src={episode.image?.medium} />
             <div className="episode__info">
                 <span className="episode__info__name">{episode.name}</span>
-                <span>Aired: {episode.airstamp}</span>
+                <span>Aired: {`${episode.airdate.split("-").join("/")} ${episode.airtime}`}</span>
                 <span dangerouslySetInnerHTML={{__html: `Summary: ${episode.summary}`}}></span>
             </div>
         </div>

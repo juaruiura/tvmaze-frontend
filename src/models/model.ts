@@ -21,7 +21,8 @@ export interface SeasonEntity {
 export interface EpisodeEntity {
     id: number,
     name: string,
-    airstamp: string,
+    airdate: string,
+    airtime: string,
     summary: string,
     image: { medium: string, original: string },
 }
