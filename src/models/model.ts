@@ -1,5 +1,5 @@
 export interface ShowEntity {
-    id: string,
+    id: number,
     name: string,
     genres: string[],
     premiered: string,
@@ -11,9 +11,17 @@ export interface ShowsSearchEntity {
     show: ShowEntity,
 }
 export interface SeasonEntity {
-    id: string,
+    id: number,
     number: number,
     episodeOrder: number,
     premiereDate: string,
+    image: { medium: string, original: string },
+}
+
+export interface EpisodeEntity {
+    id: number,
+    name: string,
+    airstamp: string,
+    summary: string,
     image: { medium: string, original: string },
 }

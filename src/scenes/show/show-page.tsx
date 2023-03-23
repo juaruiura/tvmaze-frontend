@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { getAllShows, getShowsByName } from "../../api/api";
 import { ShowEntity } from "../../models/model";
 import { ShowList } from "./components/show-list";
@@ -12,7 +13,9 @@ export const ShowPage: React.FC<Props> = (props) => {
 
     const [shows, setShows] = React.useState<ShowEntity[]>([]);
     const [isSearch, setIsSearch] = React.useState<boolean>(false);
-    const [page, setPage] = React.useState<number>(0);
+    const [searchParams] = useSearchParams();
+    const navigate = useNavigate();
+    const [page, setPage] = React.useState<number>(!isNaN(Number(searchParams.get("q"))) ? Number(searchParams.get("q")) : 0);
 
     React.useEffect(() => {
         getAllShows(page)
@@ -21,8 +24,14 @@ export const ShowPage: React.FC<Props> = (props) => {
     }, [page]);
 
     const pageHandler = (action: string) => {
-        if (action === "increase") setPage(page => ++page);
-        if (action === "decrease") setPage(page => page > 0 ? --page : page);
+        if (action === "increase") {
+            navigate(`/shows?q=${page + 1}`);
+            setPage(page => ++page);
+        }
+        if (action === "decrease") {
+            navigate(`/shows?q=${page > 0 ? page - 1 : page}`);
+            setPage(page => page > 0 ? --page : page);
+        }
     }
 
     const searchHandler = (showName: string) => {

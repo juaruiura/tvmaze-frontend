@@ -1,4 +1,4 @@
-import { ShowsSearchEntity, ShowEntity, SeasonEntity } from "../models/model";
+import { ShowsSearchEntity, ShowEntity, SeasonEntity, EpisodeEntity } from "../models/model";
 
 export const getAllShows = async (page: number): Promise<ShowEntity[]> => {
     return fetch(`https://api.tvmaze.com/shows?page=${page}`)
@@ -26,6 +26,18 @@ export const getShowsByName = async (showName): Promise<ShowsSearchEntity[]> => 
 
 export const getShowSeasons = async (id: string): Promise<SeasonEntity[]> => {
     return fetch(`https://api.tvmaze.com/shows/${id}/seasons`)
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error("Error fetching shows");
+            }
+        })
+        .catch((e) => console.error(e));
+} 
+
+export const getSeasonEpisodes = async (id: string): Promise<EpisodeEntity[]> => {
+    return fetch(`https://api.tvmaze.com/seasons/${id}/episodes`)
         .then((response) => {
             if (response.ok) {
                 return response.json();

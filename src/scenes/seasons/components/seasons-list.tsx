@@ -1,7 +1,6 @@
 import React from "react";
 import { SeasonEntity } from "../../../models/model";
 import { SeasonCard } from "./season-card";
-// import { ShowCard } from "./show-card";
 
 interface Props {
     seasons: SeasonEntity[],

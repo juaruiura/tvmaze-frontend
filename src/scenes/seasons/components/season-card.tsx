@@ -8,10 +8,10 @@ interface Props {
 
 export const SeasonCard: React.FC<Props> = (props) => {
     const { season } = props;
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     return (
-        <div className="season" key={season.id}>
+        <div className="season" onClick={() => navigate(`/seasons/${season.id}/episodes`)} key={season.id}>
             <img className="season__image" src={season.image?.medium} />
             <div className="season__info">
                 <span className="season__info__number">Season {season.number}</span>

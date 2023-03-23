@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link as button, useNavigate, useParams } from "react-router-dom";
 import { getShowSeasons } from "../../api/api";
 import { SeasonEntity } from "../../models/model";
 import { SeasonsList } from "./components/seasons-list";
@@ -11,6 +11,7 @@ export const SeasonsPage: React.FC<Props> = (props) => {
 
     const [seasons, setSeasons] = React.useState<SeasonEntity[]>([]);
     const { id } = useParams();
+    const navigate = useNavigate();
 
     React.useEffect(() => {
         getShowSeasons(id)
@@ -19,7 +20,7 @@ export const SeasonsPage: React.FC<Props> = (props) => {
     }, []);
 
     return <>
-        <Link className="back-button" to={"/shows"}>Go back to Shows List page</Link>
+        <button className="back-button" onClick={() => navigate(-1)}>Go back to Shows List page</button>
         <SeasonsList seasons={seasons} />
     </>
 };
